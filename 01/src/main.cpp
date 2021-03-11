@@ -42,11 +42,11 @@ public:
 
 class Stack {
 	int *m_array;
-	int m_len;
+	const int m_len;
 	int m_stackPos;
 
 public:
-	Stack(int len) {
+	Stack(const int len) {
 		assert(len > 0);
 		m_array = new int[len];
 		m_len = len;
@@ -153,9 +153,9 @@ int main(int argc, char** args) {
 	Stack stack(10);
 	stack.reset();
 	stack.print();
-	stack.push(3) ? std::cout << "Success\n" : std::cout << "Stack Overlow\n";
-	stack.push(7) ? std::cout << "Success\n" : std::cout << "Stack Overlow\n";
-	stack.push(5) ? std::cout << "Success\n" : std::cout << "Stack Overlow\n";
+	stack.push(3) ? std::cout << "Success\n" : std::cout << "Stack Overflow\n";
+	stack.push(7) ? std::cout << "Success\n" : std::cout << "Stack Overflow\n";
+	stack.push(5) ? std::cout << "Success\n" : std::cout << "Stack Overflow\n";
 	stack.print();
 	std::cout << stack.pop() << "\n";
 	stack.print();
