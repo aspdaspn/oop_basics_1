@@ -2,12 +2,13 @@
 
 // Task 1
 class Person {
-public:
+protected:
 	std::string m_name;
 	unsigned short m_age;
 	std::string m_gender;
 	unsigned short m_weight;
-	
+
+public:	
 	Person(std::string name = "", unsigned int age = 0, unsigned int weight = 0, std::string gender = "") 
 	: m_name(name), m_age(age), m_weight(weight), m_gender(gender){
 	}
@@ -27,10 +28,11 @@ public:
 };
 
 class Student : public Person {
-public:
-	unsigned short m_id;
+protected:
 	unsigned short m_year;
 
+public:
+	unsigned short m_id;
 	Student(unsigned int year = 0, unsigned int id = 0)
 	: m_year(year), m_id(id) {
 	}
@@ -57,17 +59,18 @@ public:
 
 //Task 2
 class Fruit {
-	public:
+	protected:
 		std::string m_name;
 		std::string m_color;
+	public:
 		Fruit(std::string name = "", std::string color = "") {
 		}
 		
-		std::string getName() {
+		std::string getName() const {
 			return m_name;
 		}
 
-		std::string getColor() {
+		std::string getColor() const {
 			return m_color;
 		}
 };
