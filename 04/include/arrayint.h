@@ -1,6 +1,3 @@
-#ifndef ARRAYINT_H
-#define ARRAYINT_H
-
 #include <cassert> // для assert()
 
 class ArrayInt { 
@@ -38,6 +35,12 @@ class ArrayInt {
 		int& operator[](int index) {
 			assert(index >= 0 && index < m_length);
 			return m_data[index];
+		}
+
+		void printArray() {
+			// Метод getArray выводит все элементы массива от 0 до m_length
+			for (int i = 0; i < m_length; ++i)
+				std::cout << m_data[i] << " ";
 		}
 
 		// Функция resize изменяет размер массива. Все существующие элементы сохраняются. Процесс медленный
@@ -89,12 +92,58 @@ class ArrayInt {
 			++m_length;
 		}
 
+		int pop_back() {
+			// Возврашаем последний элемент массива
+			// Создаём временную переменную для хранения возвратного значения
+			int temp = m_data[m_length - 1];
+			// обнуляем последний элемент массива и сокращаем его длину
+			m_data[--m_length] = 0;
+			// возвращаем значение
+			return temp;
+		}
+
+		int pop_front() {
+			// Возвращаем нулевой элемент массива
+			// Создаём временную переменную для хранения возвратного значения
+			int temp = m_data[0];
+			// Копируем каждый элемент массива в предыдущий
+			for (int i = 1; i < m_length; ++i)
+				m_data[i - 1] = m_data[i];
+			// обнуляем последний элемент массива и сокращаем его длину
+			m_data[--m_length] = 0;
+			// возвращаем значение
+			return temp;
+		}
+
 		void push_back(int value) { 
 			insertBefore(value, m_length); 
 		}
+
+		void sortArray(int first, int last) {
+				int i = first;
+				int j = last;
+
+				int x = arr[(first + last) / 2];
+
+				do
+				{
+					while (arr[i] < x) i++;
+					while (arr[j] > x) j--;
+
+					if (i <= j)
+					{
+						swap(&arr[i], &arr[j]);
+						i++;
+						j--;
+					}
+				} while (i <= j);
+
+				if (i < last) qs(arr, i, last);
+				if (first < j) qs(arr, first, j);
+			}
+
 };
 
-#endif
 
 
 
