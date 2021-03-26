@@ -119,27 +119,43 @@ class ArrayInt {
 			insertBefore(value, m_length); 
 		}
 
+		void swap(int *a, int *b) {
+			// Метод перестановки двух целых чисел
+			int temp = *a;
+			*a = *b;
+			*b = temp;
+		}
+
 		void sortArray(int first, int last) {
+			// Метод быстрой сортировки массива (Quick Sort)
+			// проверим входные параметры
+			assert(first >= 0 && first <= m_length);
+			assert(last >= 0 && last <= m_length);
+			assert(first < last);
 				int i = first;
 				int j = last;
 
-				int x = arr[(first + last) / 2];
+				// найдём середину в массиве
+				int x = m_data[(first + last) / 2];
 
-				do
-				{
-					while (arr[i] < x) i++;
-					while (arr[j] > x) j--;
+				do {
+					// находим элемент слева меньше центрального
+					while (m_data[i] < x) i++;
+					// и справа
+					while (m_data[j] > x) j--;
 
-					if (i <= j)
-					{
-						swap(&arr[i], &arr[j]);
+					if (i <= j)	{
+						// если индексы не встретились, меняем элементы под индексами i и j местами
+						swap(&m_data[i], &m_data[j]);
+						// смещаем оба индекса ближе к центру
 						i++;
 						j--;
 					}
+				// повторяем, пока индексы не встретились
 				} while (i <= j);
-
-				if (i < last) qs(arr, i, last);
-				if (first < j) qs(arr, first, j);
+				// запускаем рекурсивно сортировку для половин массива
+				if (i < last) sortArray(i, last);
+				if (first < j) sortArray(first, j);
 			}
 
 };
