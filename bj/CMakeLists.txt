@@ -1,0 +1,5 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+PROJECT(Black_Jack)
+add_executable(bj.bin src/main.cpp src/card.cpp src/hand.cpp)
+# set(CMAKE_BUILD_TYPE Debug)
+target_include_directories(bj.bin PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
