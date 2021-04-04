@@ -9,7 +9,7 @@ class GenericPlayer : public Hand {
 		GenericPlayer(string name) : m_name(name) {
 		}
 		// Returns if a player need a card
-		virtual bool isHitting();
+		virtual isHitting();
 		
 		// Hand Sum more than 21
 		bool IsBoosted();
