@@ -5,11 +5,11 @@ using namespace std;
 // Class Hand
 class Hand {
 	private:
-		vector <*Card> m_hand;
+		vector <Card*> m_hand;
 	public:
 		Hand() { };
 		~Hand() {
-			delete *m_hand;
+			m_hand.Clear();
 		}
 		void Add(Card *card);
 		void Clear();

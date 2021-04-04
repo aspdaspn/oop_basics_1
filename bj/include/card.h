@@ -27,6 +27,6 @@ class Card {
 	public:
 		Card() { };
 		bool Flip();
-		int GetValue();
+		int GetValue() const;
 };
 #endif
