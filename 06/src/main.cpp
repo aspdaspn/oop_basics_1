@@ -1,16 +1,27 @@
-#include <main.h>
+#include "main.h"
+using namespace std;
+
+ostream& endll(ostream& os) {
+	os.flush();
+	return os << "\n\n";
+}
+
+
 int main(int argc, char** args) {
 	// Task 1
 	int digit;
 	do {
-		std::cout << "Enter an integer, 0 to exit: ";
-		std::cin >> digit;
-		if (std::cin.fail()) {
-			std::cout << "\nYou entered something wrong!\n";
-			std::cin.clear();
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		cout << "Enter an integer, 0 to exit: ";
+		cin >> digit;
+		if (cin.fail()) {
+			cout << "\nYou entered something wrong!\n";
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 			digit = -1;
 		}
 	} while (digit !=0);
+	// Task 2
+	cout << "It should be" << endll;
+	cout << "Two lines free above this" << endl;
 	return EXIT_SUCCESS;
 }
