@@ -1,18 +1,14 @@
 #ifndef HAND_H
 #define HAND_H
-using namespace std;
 
-// Class Hand
 class Hand {
-	private:
-		vector <Card*> m_hand;
 	public:
-		Hand() { };
-		~Hand() {
-			m_hand.Clear();
-		}
-		void Add(Card *card);
+		Hand();
+		virtual ~Hand();
+		void Add(Card *pCard);
 		void Clear();
-		int GetValue();
+		int GetTotal() const;
+	protected:
+		vector <Card*> m_Cards;
 };
 #endif

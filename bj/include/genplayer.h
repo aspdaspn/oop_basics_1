@@ -1,20 +1,24 @@
 #ifndef GENERIC_PLAYER_H
 #define GENERIC_PLAYER_H
-using namespace std;
-// Class Generic Player
+
 class GenericPlayer : public Hand {
-	protected:
-		string m_name;
+	friend ostream& operator<< (ostream& os, const GenericPlayer& aGenericPlayer);
+
 	public:
-		GenericPlayer(string name) : m_name(name) {
-		}
+		GenericPlayer(const string& name = "");
+
+		virtual ~GenericPlayer();
+
 		// Returns if a player need a card
-		virtual isHitting();
+		virtual bool isHitting() const = 0;
 		
 		// Hand Sum more than 21
-		bool IsBoosted();
+		bool IsBusted() const;
 
 		// output about excess
-		void Bust();
+		void Bust() const;
+
+	protected:
+		string m_Name;
 };
 #endif
