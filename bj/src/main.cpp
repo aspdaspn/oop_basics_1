@@ -1,8 +1,13 @@
+using namespace std;
 #include "main.h"
 #include "card.h"
 #include "hand.h"
+#include "genplayer.h"
+#include "player.h"
+#include "house.h"
+#include "deck.h"
+#include "game.h"
 
-using namespace std;
 
 int main(int argc, char** args) {
 	cout << "\t\tWelcome to Blackjack!\n\n";

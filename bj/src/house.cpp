@@ -1,6 +1,6 @@
 #include "house.h"
 
-bool House:IsHitting() const {
+bool House::IsHitting() const {
 	return (GetTotal() <= 16);
 }
 

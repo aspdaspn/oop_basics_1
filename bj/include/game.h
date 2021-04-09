@@ -1,5 +1,5 @@
-#ifndef CARD_H
-#define CARD_H
+#ifndef GAME_H
+#define GAME_H
 
 class Game {
 	public:
@@ -11,5 +11,5 @@ class Game {
 		Deck m_Deck;
 		House m_House;
 		vector<Player> m_Players;
-}
+};
 #endif

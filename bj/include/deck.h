@@ -13,6 +13,6 @@ class Deck : public Hand {
 		void Deal(Hand& aHand);
 		// Gives a player an additional card
 		void AdditionalCards(GenericPlayer& aGenericPlayer);
-}
+};
 
 #endif

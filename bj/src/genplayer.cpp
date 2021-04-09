@@ -6,7 +6,7 @@ GenericPlayer::GenericPlayer(const string& name) : m_Name(name) {
 GenericPlayer::~GenericPlayer() {
 }
 
-virtual bool GenericPlayer::isHitting() {
+virtual bool GenericPlayer::IsHitting() {
 	return false;
 }
 

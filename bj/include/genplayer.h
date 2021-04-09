@@ -10,7 +10,7 @@ class GenericPlayer : public Hand {
 		virtual ~GenericPlayer();
 
 		// Returns if a player need a card
-		virtual bool isHitting() const = 0;
+		virtual bool IsHitting() const = 0;
 		
 		// Hand Sum more than 21
 		bool IsBusted() const;
