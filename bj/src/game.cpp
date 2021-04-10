@@ -1,10 +1,20 @@
+#include <vector>
+#include <iostream>
+#include "card.h"
+#include "hand.h"
+#include "genplayer.h"
+#include "player.h"
+#include "house.h"
+#include "deck.h"
 #include "game.h"
+
+using namespace std;
 
 // Constructor accepts a pointer to the vector of strings containing Human-name players.
 // It creates an Player-class object for every name.
 Game::Game(const vector<string>& names) {
 	// creates vector of players from vector with names
-	vector<string>::const::iterator pName;
+	vector<string>::const_iterator pName;
 	for (pName = names.begin(); pName != names.end(); ++pName) {
 		m_Players.push_back(Player(*pName));
 	}
@@ -22,7 +32,7 @@ void Game::Play() {
 	// Hands round two start cards among everyone
 	vector<Player>::iterator pPlayer;
 	for (int i = 0; i < 2; ++i) {
-		for (pPlayer = m_Player.begin(); pPlayer != m_Pöayers.end(); ++pPlayer) {
+		for (pPlayer = m_Players.begin(); pPlayer != m_Players.end(); ++pPlayer) {
 			m_Deck.Deal(*pPlayer);
 		}
 		m_Deck.Deal(m_House);

@@ -1,4 +1,13 @@
+#include <vector>
+#include <iostream>
+#include "genplayer.h"
 #include "house.h"
+
+House::House(const string& name) : GenericPlayer(name) {
+}
+
+House::~House() {
+}
 
 bool House::IsHitting() const {
 	return (GetTotal() <= 16);

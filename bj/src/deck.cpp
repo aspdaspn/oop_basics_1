@@ -1,5 +1,12 @@
-#include <algorythm>
+#include <algorithm>
+#include <vector>
+#include <iostream>
+#include "card.h"
+#include "hand.h"
+#include "genplayer.h"
 #include "deck.h"
+
+using namespace std;
 
 Deck::Deck() {
 	m_Cards.reserve(52);
@@ -34,7 +41,7 @@ void Deck::Deal(Hand& aHand) {
 	}
 }
 
-void Deck:AdditionalCards(GenericPlayer& aGenericPlayer) {
+void Deck::AdditionalCards(GenericPlayer& aGenericPlayer) {
 	cout << endl;
 	// Deals cards until a player get busted or he stops taking cards
 	while (!(aGenericPlayer.IsBusted()) && aGenericPlayer.IsHitting()) {

@@ -1,3 +1,5 @@
+#include <genplayer.h>
+#include <hand.h>
 #ifndef PLAYER_H
 #define PLAYER_H
 

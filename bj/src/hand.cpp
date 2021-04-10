@@ -1,3 +1,4 @@
+#include <vector>
 #include "hand.h"
 
 Hand::Hand() {
@@ -10,7 +11,7 @@ Hand::~Hand() {
 
 // Method to add card to hand
 void Hand::Add(Card *pCard) {
-	m_Cards.push_back(*pCard);
+	m_Cards.push_back(pCard);
 }
 
 // Method to clear Hand
@@ -59,5 +60,3 @@ int Hand::GetTotal() const {
 
 	return total;
 }
-}
-		

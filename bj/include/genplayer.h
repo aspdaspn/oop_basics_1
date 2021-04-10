@@ -1,5 +1,8 @@
+#include "hand.h"
+#include <vector>
 #ifndef GENERIC_PLAYER_H
 #define GENERIC_PLAYER_H
+using namespace std;
 
 class GenericPlayer : public Hand {
 	friend ostream& operator<< (ostream& os, const GenericPlayer& aGenericPlayer);

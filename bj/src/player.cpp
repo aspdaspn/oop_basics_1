@@ -1,4 +1,15 @@
+#include <vector>
+#include <iostream>
+#include "genplayer.h"
+#include "hand.h"
 #include "player.h"
+
+
+Player::Player(const string& name) : GenericPlayer(name) {
+}
+
+Player::~Player() { 
+}
 
 bool Player::IsHitting() const {
 	cout << m_Name << ", do you want a hit? (Y/N): ";

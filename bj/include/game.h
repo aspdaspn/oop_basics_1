@@ -1,3 +1,5 @@
+#include <iostream>
+#include <vector>
 #ifndef GAME_H
 #define GAME_H
 
