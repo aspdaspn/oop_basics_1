@@ -1,0 +1,5 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+PROJECT(robot)
+add_executable(robot.bin src/robot.cpp src/myexception.cpp src/main.cpp)
+# set(CMAKE_BUILD_TYPE Debug)
+target_include_directories(robot.bin PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
