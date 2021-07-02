@@ -1,6 +1,11 @@
 #include "main.h"
 #include "card.h"
 #include "hand.h"
+#include "genplayer.h"
+#include "player.h"
+#include "house.h"
+#include "deck.h"
+#include "game.h"
 
 using namespace std;
 

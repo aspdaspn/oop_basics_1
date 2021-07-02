@@ -1,13 +1,13 @@
-#include "genplayer.cpp"
+#include <vector>
+#include <iostream>
+#include "hand.h"
+#include "genplayer.h"
+using namespace std;
 
 GenericPlayer::GenericPlayer(const string& name) : m_Name(name) {
 }
 
 GenericPlayer::~GenericPlayer() {
-}
-
-virtual bool GenericPlayer::isHitting() {
-	return false;
 }
 
 bool GenericPlayer::IsBusted() const {
@@ -18,7 +18,7 @@ void GenericPlayer::Bust() const {
 	cout << m_Name << " busts!\n";
 }
 
-ostream& operator<< (ostraeam& os, const GenericPlayer& aGenericPlayer) {
+ostream& operator<< (ostream& os, const GenericPlayer& aGenericPlayer) {
 	os << aGenericPlayer.m_Name << ":\t";
 
 	vector<Card*>::const_iterator pCard;
